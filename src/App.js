@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  state={
+    componentRenderCount: 0
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <AddTodo />
+        <TodoList/>
+        <h3>Does the redux store clear on component update? Let's find out:</h3>
+        <button onClick={()=>{this.setState({componentRenderCount: this.state.componentRenderCount + 1}, ()=>{console.log(`component rendered ${this.state.componentRenderCount} time(s)`)})}}>Re-render component</button>
+      </div>
+    )
+  }
 }
 
-export default App;
+
+// function App() {
+
+//   console.log('whole app rendered')
+//   return (
+//     <div className="App">
+//       <Header />
+//       <AddTodo />
+//       <TodoList/>
+//     </div>
+//   );
+// }
+
+// export default App;
