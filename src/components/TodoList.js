@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import '../App.css'
+import '../App.css';
+import removeTodoAction from '../actions/removeTodoAction'
 
 function TodoList(props) {
     return (
@@ -11,12 +12,13 @@ function TodoList(props) {
                         <input type='checkbox' id={`todo-item-${index}`} />
                         <span>{i}</span>
                     </label>
+                    <button onClick={(e)=>{e.preventDefault(); props.removeTodoAction(index)}} type='button'>Remove</button>
                 </div>
             ))}
         </div>
     )
 }
 
-const mapStateToProps = state => ({ todos: state.addTodoReducer.todos })
+const mapStateToProps = state => ({ todos: state.todoReducer.todos })
 
-export default connect(mapStateToProps , null)(TodoList)
+export default connect(mapStateToProps , {removeTodoAction})(TodoList)

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import AddTodo from './components/AddTodo';
+import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 import React, { Component } from 'react'
@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <AddTodo />
+        <TodoForm />
         <TodoList/>
         <h3>Does the redux store clear on component update? Let's find out:</h3>
         <button onClick={()=>{this.setState({componentRenderCount: this.state.componentRenderCount + 1}, ()=>{console.log(`component rendered ${this.state.componentRenderCount} time(s)`)})}}>Re-render component</button>

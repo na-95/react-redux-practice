@@ -1,6 +1,3 @@
-import addTodoReducer from "../reducers/addTodoReducer"
-
-
 const addTodoAction = (todo) => {
     
     return {
