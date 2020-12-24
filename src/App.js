@@ -23,18 +23,3 @@ export default class App extends Component {
     )
   }
 }
-
-
-// function App() {
-
-//   console.log('whole app rendered')
-//   return (
-//     <div className="App">
-//       <Header />
-//       <AddTodo />
-//       <TodoList/>
-//     </div>
-//   );
-// }
-
-// export default App;

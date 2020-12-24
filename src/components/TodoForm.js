@@ -27,7 +27,6 @@ class TodoForm extends Component {
                     <label htmlFor='todo'>
                         Add Todo:&nbsp; 
                         <input required type='text' name='todo' onChange={(e)=>{this.setState({[e.target.name]: e.target.value})}} />
-                        {/* <input required type='text' name='todo' onChange={(e)=>{this.setState({[e.target.name]: e.target.value}, ()=>{console.log(this.state.todo)})}} /> */}
                     </label>&nbsp;
                     <button className='todo-form-button' type='submit'>Add</button>&nbsp;
                     <button className='todo-form-button' type='button' onClick={this.clearTodos}>Clear</button>
